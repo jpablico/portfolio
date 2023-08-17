@@ -5,26 +5,53 @@
 }
 
 body {
-	width: min(100% - 2rem, 60rem);
+	display: flex;
+	justify-content: center;
 	margin-inline: auto;
 	font-family: 'Rubik', sans-serif;
+	width: 100%;
 }
 
-.header-wrapper {
-	
-
-	.logo-name{
+.header-container {
+	width: 100%;
+	box-shadow: 0 5px 2px -2px rgb(154, 154, 154);
+	display: flex;
+	justify-content: center;
+	.header-sub{ 
 		display: flex;
-		gap: 1rem;
 		align-items: center;
+		justify-content: space-between;
+		width: min(100% - 2rem, 90rem);
 
-		.logo-icon {
-			transform: rotate(90deg);
-			width: 4vh;
+		.logo-name{
+			display: flex;
+			gap: 1rem;
+			align-items: center;
+	
+			.logo-icon {
+				transform: rotate(90deg);
+				width: 4vh;
+			}
 		}
-		.logoName {
-
+		.navigation-container{
+	
+			.nav-link-wrapper {
+				list-style: none;
+				display: flex;
+				gap: 1rem;
+	
+				a:link, :visited {
+					text-decoration: none;
+					color: black;
+				}
+	
+				.nav-link {
+					font-weight: bold;
+				}
+	
+			}
+	
 		}
 	}
-
+	
 }

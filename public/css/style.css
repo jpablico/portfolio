@@ -5,17 +5,43 @@
 }
 
 body {
-  width: min(100% - 2rem, 60rem);
+  display: flex;
+  justify-content: center;
   margin-inline: auto;
   font-family: "Rubik", sans-serif;
+  width: 100%;
 }
 
-.header-wrapper .logo-name {
+.header-container {
+  width: 100%;
+  box-shadow: 0 5px 2px -2px rgb(154, 154, 154);
+  display: flex;
+  justify-content: center;
+}
+.header-container .header-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100% - 2rem, 90rem);
+}
+.header-container .header-sub .logo-name {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
-.header-wrapper .logo-name .logo-icon {
+.header-container .header-sub .logo-name .logo-icon {
   transform: rotate(90deg);
   width: 4vh;
+}
+.header-container .header-sub .navigation-container .nav-link-wrapper {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.header-container .header-sub .navigation-container .nav-link-wrapper a:link, .header-container .header-sub .navigation-container .nav-link-wrapper :visited {
+  text-decoration: none;
+  color: black;
+}
+.header-container .header-sub .navigation-container .nav-link-wrapper .nav-link {
+  font-weight: bold;
 }
