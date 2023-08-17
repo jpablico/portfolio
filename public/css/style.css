@@ -1,0 +1,21 @@
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: min(100% - 2rem, 60rem);
+  margin-inline: auto;
+  font-family: "Rubik", sans-serif;
+}
+
+.header-wrapper .logo-name {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.header-wrapper .logo-name .logo-icon {
+  transform: rotate(90deg);
+  width: 4vh;
+}
