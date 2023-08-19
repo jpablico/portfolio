@@ -110,9 +110,20 @@ body {
 
 #services-section {
 	display: flex;
+	flex-direction: column;
+	place-items: center;
 	justify-content: center;
 	padding-top: 4rem;
+
 	.service-span {
 		font-weight: $fontbodyWgt;
+	}
+	.service-heading {
+		color: #30F;
+		font-family: 'Roboto Mono';
+		font-size: 2.1875rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 2rem; /* 91.429% */
 	}
 }
