@@ -133,6 +133,10 @@ body {
 		flex-direction:  row;
 
 		.uix-design {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 60rem;
 			.uix-logo {
 				width: 50px;
 				height: 50px;
@@ -149,6 +153,14 @@ body {
 					height: 2.13994rem;
 					flex-shrink: 0;
 				}
+			}
+			.uix-text {
+				color: #000;
+				font-family: 'Roboto Mono';
+				font-size: 1.4375rem;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 2rem; /* 139.13% */
 			}
 		}
 	}

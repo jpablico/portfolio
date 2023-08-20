@@ -117,6 +117,12 @@ body {
   display: flex;
   flex-direction: row;
 }
+#services-section .services-highlight-wrapper .uix-design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60rem;
+}
 #services-section .services-highlight-wrapper .uix-design .uix-logo {
   width: 50px;
   height: 50px;
@@ -131,4 +137,12 @@ body {
   width: 2.1875rem;
   height: 2.13994rem;
   flex-shrink: 0;
+}
+#services-section .services-highlight-wrapper .uix-design .uix-text {
+  color: #000;
+  font-family: "Roboto Mono";
+  font-size: 1.4375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2rem; /* 139.13% */
 }
