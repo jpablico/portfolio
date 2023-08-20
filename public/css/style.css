@@ -112,3 +112,19 @@ body {
   font-weight: 700;
   line-height: 2rem; /* 91.429% */
 }
+#services-section .services-highlight-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+#services-section .services-highlight-wrapper .uix-design .uix-logo {
+  width: 3.625rem;
+  height: 3.625rem;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+  background: #AD9FFF;
+}
+#services-section .services-highlight-wrapper .uix-design .uix-logo .uix-icon {
+  width: 2.1875rem;
+  height: 2.13994rem;
+  flex-shrink: 0;
+}
