@@ -100,6 +100,7 @@ body {
   place-items: center;
   justify-content: center;
   padding-top: 4rem;
+  width: 100%;
 }
 #services-section .service-span {
   font-weight: 200;
@@ -117,9 +118,12 @@ body {
   flex-direction: row;
 }
 #services-section .services-highlight-wrapper .uix-design .uix-logo {
-  width: 3.625rem;
-  height: 3.625rem;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 0.625rem;
   background: #AD9FFF;
 }
