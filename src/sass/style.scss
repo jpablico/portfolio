@@ -117,6 +117,9 @@ body {
 
 	width: 100%;
 
+	.service-header-text {
+		margin-top: 3rem;
+	}
 	.service-span {
 		font-weight: $fontbodyWgt;
 	}
@@ -132,12 +135,14 @@ body {
 		display: flex;
 		flex-direction:  row;
 
-		.uix-design {
+		.uix-design, .web-dev {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			width: 60rem;
-			.uix-logo {
+			width: 25rem;
+			box-sizing: border-box;
+
+			.uix-logo, .web-dev-logo{
 				width: 50px;
 				height: 50px;
 				flex-shrink: 0;
@@ -148,7 +153,7 @@ body {
 
 				border-radius: 0.625rem;
 				background: #AD9FFF;
-				.uix-icon {
+				.uix-icon, .web-dev-icon {
 					width: 2.1875rem;
 					height: 2.13994rem;
 					flex-shrink: 0;
@@ -161,7 +166,20 @@ body {
 				font-style: normal;
 				font-weight: 500;
 				line-height: 2rem; /* 139.13% */
+				margin-top: 1rem;
+				margin-bottom: 0.5rem;
 			}
+			.uix-subtext {
+				width: 20.625rem;
+				height: 6.6875rem;
+				flex-shrink: 0;	
+				text-align: center;
+				margin: 0;
+			}
+		}
+
+		.bracket-icon {
+
 		}
 	}
 }
