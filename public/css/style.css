@@ -120,14 +120,14 @@ body {
   display: flex;
   flex-direction: row;
 }
-#services-section .services-highlight-wrapper .uix-design, #services-section .services-highlight-wrapper .web-dev {
+#services-section .services-highlight-wrapper .uix-design, #services-section .services-highlight-wrapper .web-dev, #services-section .services-highlight-wrapper .app-dev {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 25rem;
   box-sizing: border-box;
 }
-#services-section .services-highlight-wrapper .uix-design .uix-logo, #services-section .services-highlight-wrapper .uix-design .web-dev-logo, #services-section .services-highlight-wrapper .web-dev .uix-logo, #services-section .services-highlight-wrapper .web-dev .web-dev-logo {
+#services-section .services-highlight-wrapper .uix-design .uix-logo, #services-section .services-highlight-wrapper .uix-design .web-dev-logo, #services-section .services-highlight-wrapper .uix-design .app-logo, #services-section .services-highlight-wrapper .web-dev .uix-logo, #services-section .services-highlight-wrapper .web-dev .web-dev-logo, #services-section .services-highlight-wrapper .web-dev .app-logo, #services-section .services-highlight-wrapper .app-dev .uix-logo, #services-section .services-highlight-wrapper .app-dev .web-dev-logo, #services-section .services-highlight-wrapper .app-dev .app-logo {
   width: 50px;
   height: 50px;
   flex-shrink: 0;
@@ -137,12 +137,12 @@ body {
   border-radius: 0.625rem;
   background: #AD9FFF;
 }
-#services-section .services-highlight-wrapper .uix-design .uix-logo .uix-icon, #services-section .services-highlight-wrapper .uix-design .uix-logo .web-dev-icon, #services-section .services-highlight-wrapper .uix-design .web-dev-logo .uix-icon, #services-section .services-highlight-wrapper .uix-design .web-dev-logo .web-dev-icon, #services-section .services-highlight-wrapper .web-dev .uix-logo .uix-icon, #services-section .services-highlight-wrapper .web-dev .uix-logo .web-dev-icon, #services-section .services-highlight-wrapper .web-dev .web-dev-logo .uix-icon, #services-section .services-highlight-wrapper .web-dev .web-dev-logo .web-dev-icon {
+#services-section .services-highlight-wrapper .uix-design .uix-logo .uix-icon, #services-section .services-highlight-wrapper .uix-design .uix-logo .web-dev-icon, #services-section .services-highlight-wrapper .uix-design .uix-logo .app-icon, #services-section .services-highlight-wrapper .uix-design .web-dev-logo .uix-icon, #services-section .services-highlight-wrapper .uix-design .web-dev-logo .web-dev-icon, #services-section .services-highlight-wrapper .uix-design .web-dev-logo .app-icon, #services-section .services-highlight-wrapper .uix-design .app-logo .uix-icon, #services-section .services-highlight-wrapper .uix-design .app-logo .web-dev-icon, #services-section .services-highlight-wrapper .uix-design .app-logo .app-icon, #services-section .services-highlight-wrapper .web-dev .uix-logo .uix-icon, #services-section .services-highlight-wrapper .web-dev .uix-logo .web-dev-icon, #services-section .services-highlight-wrapper .web-dev .uix-logo .app-icon, #services-section .services-highlight-wrapper .web-dev .web-dev-logo .uix-icon, #services-section .services-highlight-wrapper .web-dev .web-dev-logo .web-dev-icon, #services-section .services-highlight-wrapper .web-dev .web-dev-logo .app-icon, #services-section .services-highlight-wrapper .web-dev .app-logo .uix-icon, #services-section .services-highlight-wrapper .web-dev .app-logo .web-dev-icon, #services-section .services-highlight-wrapper .web-dev .app-logo .app-icon, #services-section .services-highlight-wrapper .app-dev .uix-logo .uix-icon, #services-section .services-highlight-wrapper .app-dev .uix-logo .web-dev-icon, #services-section .services-highlight-wrapper .app-dev .uix-logo .app-icon, #services-section .services-highlight-wrapper .app-dev .web-dev-logo .uix-icon, #services-section .services-highlight-wrapper .app-dev .web-dev-logo .web-dev-icon, #services-section .services-highlight-wrapper .app-dev .web-dev-logo .app-icon, #services-section .services-highlight-wrapper .app-dev .app-logo .uix-icon, #services-section .services-highlight-wrapper .app-dev .app-logo .web-dev-icon, #services-section .services-highlight-wrapper .app-dev .app-logo .app-icon {
   width: 2.1875rem;
   height: 2.13994rem;
   flex-shrink: 0;
 }
-#services-section .services-highlight-wrapper .uix-design .uix-text, #services-section .services-highlight-wrapper .web-dev .uix-text {
+#services-section .services-highlight-wrapper .uix-design .uix-text, #services-section .services-highlight-wrapper .uix-design .web-dev-text, #services-section .services-highlight-wrapper .uix-design .app-text, #services-section .services-highlight-wrapper .web-dev .uix-text, #services-section .services-highlight-wrapper .web-dev .web-dev-text, #services-section .services-highlight-wrapper .web-dev .app-text, #services-section .services-highlight-wrapper .app-dev .uix-text, #services-section .services-highlight-wrapper .app-dev .web-dev-text, #services-section .services-highlight-wrapper .app-dev .app-text {
   color: #000;
   font-family: "Roboto Mono";
   font-size: 1.4375rem;
@@ -152,7 +152,7 @@ body {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
-#services-section .services-highlight-wrapper .uix-design .uix-subtext, #services-section .services-highlight-wrapper .web-dev .uix-subtext {
+#services-section .services-highlight-wrapper .uix-design .uix-subtext, #services-section .services-highlight-wrapper .uix-design .web-dev-subtext, #services-section .services-highlight-wrapper .uix-design .app-subtext, #services-section .services-highlight-wrapper .web-dev .uix-subtext, #services-section .services-highlight-wrapper .web-dev .web-dev-subtext, #services-section .services-highlight-wrapper .web-dev .app-subtext, #services-section .services-highlight-wrapper .app-dev .uix-subtext, #services-section .services-highlight-wrapper .app-dev .web-dev-subtext, #services-section .services-highlight-wrapper .app-dev .app-subtext {
   width: 20.625rem;
   height: 6.6875rem;
   flex-shrink: 0;

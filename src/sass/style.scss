@@ -135,14 +135,14 @@ body {
 		display: flex;
 		flex-direction:  row;
 
-		.uix-design, .web-dev {
+		.uix-design, .web-dev, .app-dev{
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			width: 25rem;
 			box-sizing: border-box;
 
-			.uix-logo, .web-dev-logo{
+			.uix-logo, .web-dev-logo, .app-logo {
 				width: 50px;
 				height: 50px;
 				flex-shrink: 0;
@@ -153,13 +153,13 @@ body {
 
 				border-radius: 0.625rem;
 				background: #AD9FFF;
-				.uix-icon, .web-dev-icon {
+				.uix-icon, .web-dev-icon, .app-icon {
 					width: 2.1875rem;
 					height: 2.13994rem;
 					flex-shrink: 0;
 				}
 			}
-			.uix-text {
+			.uix-text, .web-dev-text, .app-text {
 				color: #000;
 				font-family: 'Roboto Mono';
 				font-size: 1.4375rem;
@@ -169,7 +169,7 @@ body {
 				margin-top: 1rem;
 				margin-bottom: 0.5rem;
 			}
-			.uix-subtext {
+			.uix-subtext, .web-dev-subtext, .app-subtext {
 				width: 20.625rem;
 				height: 6.6875rem;
 				flex-shrink: 0;	
