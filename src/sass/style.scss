@@ -216,4 +216,7 @@ body {
 		font-weight: 700;
 		line-height: 2rem; /* 91.429% */
 	}
+	#splide01 {
+		width: min(100% - 2rem, 90rem);
+	}
 }

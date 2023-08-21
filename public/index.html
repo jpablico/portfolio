@@ -7,6 +7,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/public/css/style.css">
+	<link rel="stylesheet" href="/node_modules/@splidejs/splide/dist/css/splide.min.css">
+	<script src="/node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+	<script src="/src/scripts/script.js" type="module"></script>
 	<title>Josh Pablico | Portfolio</title>
 </head>
 <body>
@@ -75,7 +78,17 @@
 		<section id="portfolio-section">
 			<h3 class="portfolio-header-text">> <span class="portfolio-span">Portfolio</span></h3>
 			<h2 class="portfolio-heading">Work & Projects</h2>
-		
+
+			<section class="splide" aria-label="Splide Basic HTML Example">
+				<div class="splide__track">
+					  <ul class="splide__list">
+						  <li class="splide__slide"><img src="/src/assets/rectangle.png" alt="">Slide 01</li>
+						  <li class="splide__slide"><img src="/src/assets/rectangle.png" alt="">Slide 02</li>
+						  <li class="splide__slide"><img src="/src/assets/rectangle.png" alt="">Slide 03</li>
+					  </ul>
+				</div>
+			  </section>
+
 		</section>
 		<section id="education-section">
 			
