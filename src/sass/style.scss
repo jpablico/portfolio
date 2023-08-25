@@ -214,31 +214,28 @@ body {
 		line-height: 2rem; /* 91.429% */
 	}
 	#splide01 {
+		padding-top: 4rem;
 		width: min(100% - 2rem, 100rem);
-		height: 20rem;
-		justify-content: center;
-		place-content: center;
-		place-items: center;
-
-	}
-
-	#splide01-list {
-		display: flex;
-		place-content: center;
 	}
 
 	.splide {
-		
+
 		.splide-wrapper {
 			display: flex;
 			flex-direction: column;
 			justify-items: center;
-
+			place-content: center;
+			height: 50vh;
 			background-color: aqua;
 			
 			.splide__list {
 
-				.splide__splide {
+				.splide__slide {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					
 					
 					.slide-width {
 						aspect-ratio: 16 / 9;
