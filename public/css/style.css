@@ -193,3 +193,8 @@ body {
 #portfolio-section #splide01 {
   width: min(100% - 2rem, 90rem);
 }
+
+.slide-width {
+  aspect-ratio: 16/9;
+  width: 28rem;
+}
