@@ -229,7 +229,23 @@ body {
 }
 #portfolio-section .splide .splide-wrapper .splide__list .splide__slide .splide-slide-card .slide-project-title {
   text-align: left;
-  padding-left: 0.5rem;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0;
   font-weight: 400;
   font-size: larger;
+}
+#portfolio-section .splide .splide-wrapper .splide__list .splide__slide .splide-slide-card .project-info {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+#portfolio-section .splide .splide-wrapper .splide__list .splide__slide .splide-slide-card .project-info p {
+  border-radius: 0.25rem;
+  border: 1px solid var(--light-2, #b8b8b8);
+  padding: 0.25rem 0.5rem;
+  color: #5e5e5e;
 }
