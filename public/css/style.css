@@ -222,14 +222,15 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   background-image: linear-gradient(to top, #ffffff, #d3c8ff, #a690ff, #7557ff);
 }
-#portfolio-section .splide .splide-wrapper .splide__list .splide__slide .splide-slide-card .slide-width {
+#portfolio-section .splide .splide-wrapper .splide__list .splide__slide .splide-slide-card .slide-cover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   object-fit: cover;
   object-position: center;
+  height: 16rem;
 }
 #portfolio-section .splide .splide-wrapper .splide__list .splide__slide .splide-slide-card .slide-project-title {
   text-align: left;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   margin: 0;
