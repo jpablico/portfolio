@@ -293,17 +293,14 @@ body {
 }
 
 #education-section {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(6, 1fr);
-	grid-column-gap: 20px;
-	grid-row-gap: 5px; 
-
-	width: $sectionWidth;
-	margin: 5rem;
+	//width: $sectionWidth;
+	padding: 4rem;
+	box-sizing: border-box;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
 	.heading-subheading-text-wrapper { 
-		grid-area: 2 / 1 / 4 / 3;
-
+		
 		.heading-subheading-text-wrapper {
 			font-weight: $fontbodyWgt;
 
@@ -317,54 +314,81 @@ body {
 			line-height: 2rem; /* 91.429% */
 		}
 	}
-	.education-tree {
-		grid-area: 4 / 1 / 6 / 3;
-
-		display: grid;
-		grid-template-columns: 1fr .1fr repeat(4, 1fr);
-		grid-template-rows: repeat(5, 1fr);
-		grid-column-gap: 0px;
-		grid-row-gap: 0px; 
-
-		.vertical-line-dot-edu { 
-			grid-area: 2 / 2 / 5 / 3; 
-
-			display: flex;
-			flex-direction: column;
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-
-			justify-content: center;
-			.vertical-line {
-				width: 0.0625rem;
-				height: 4em;
-
-				background: #F1F1F1;
-
-
-				.dot-edu {
-					box-sizing: border-box;
-					margin: 0;
-					padding: 0;
-				}
-			}
+	.education-container {
+		display: flex;
+		width: $sectionWidth;
+		.education-body-section {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			//grid-template-rows: repeat(6, 1fr);
+			grid-column-gap: 20px;
+			grid-row-gap: 5px; 
+			flex: 1;
+			.education-tree {
+				grid-area: 4 / 1 / 6 / 3;
+		
+				display: grid;
+				grid-template-columns: 1fr .4fr repeat(4, 1fr);
+				grid-template-rows: repeat(5, 1fr);
+				grid-column-gap: 0px;
+				grid-row-gap: 0px; 
+		
+				border: solid blue;
+				
+				.education-left-section { 
+					display: flex;
+					flex: ;
+					.vertical-line-dot-edu { 
+						border: solid brown;
+						grid-area: 2 / 2 / 5 / 3; 
 			
+						display: flex;
+						flex-direction: column;
+						/*
+						box-sizing: border-box;
+						margin: 0;
+						padding: 0;
+						*/
+						justify-content: center;
+						.vertical-line {
+							width: 0.0625rem;
+							height: 4em;
+			
+							background: #F1F1F1;
+			
+			
+							.dot-edu {
+								box-sizing: border-box;
+								margin: 0;
+								padding: 0;
+							}
+						}
+						
+					}
+				}
+				.collin-college-edu {
+					border: solid red;
+					grid-area: 2 / 3 / 3 / 6;
+				}
+				.university-washington-edu { 
+					border: solid green($color: #000000);
+					grid-area: 3 / 3 / 4 / 6; 
+				}
+				.cisco-college-edu { 
+					border: solid purple;
+					grid-area: 4 / 3 / 5 / 6; 
+				} 
+			}
+			.education-description { 
+				border: solid yellow;
+				grid-area: 2 / 3 / 4 / 5;
+			}
+			.education-progression { 
+				border: solid orange;
+				grid-area: 4 / 3 / 6 / 5; 
+			} 
 		}
-		.div2 {
-			grid-area: 2 / 3 / 3 / 6;
-		}
-		.div3 { 
-			grid-area: 3 / 3 / 4 / 6; 
-		}
-		.div4 { 
-			grid-area: 4 / 3 / 5 / 6; 
-		} 
 	}
-	.education-description { 
-		grid-area: 2 / 3 / 4 / 5;
-	}
-	.education-progression { 
-		grid-area: 4 / 3 / 6 / 5; 
-	} 
+	
+	
 }
