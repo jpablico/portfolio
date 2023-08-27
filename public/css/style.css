@@ -222,11 +222,16 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   background-image: linear-gradient(to top, #ffffff, #d3c8ff, #a690ff, #7557ff);
 }
-#portfolio-section .splide .splide-wrapper .splide__list .splide__slide .splide-slide-card .slide-cover {
+#portfolio-section .splide .splide-wrapper .splide__list .splide__slide .splide-slide-card .slide-link {
+  display: flex;
+}
+#portfolio-section .splide .splide-wrapper .splide__list .splide__slide .splide-slide-card .slide-link .slide-cover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
+  object-fit: fill;
   object-position: center;
   height: 16rem;
+  width: auto;
+  flex: 1;
 }
 #portfolio-section .splide .splide-wrapper .splide__list .splide__slide .splide-slide-card .slide-project-title {
   text-align: left;
