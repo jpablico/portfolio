@@ -1,4 +1,5 @@
 $fontbodyWgt: 200;
+$sectionWidth: min(100% - 2rem, 90rem);
 
 :root {
 	margin: 0;
@@ -291,3 +292,38 @@ body {
 	
 }
 
+#education-section {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	grid-column-gap: 20px;
+	grid-row-gap: 5px; 
+
+	width: $sectionWidth;
+	margin: 5rem;
+	.heading-subheading-text-wrapper { 
+		grid-area: 2 / 1 / 4 / 3;
+
+		.heading-subheading-text-wrapper {
+			font-weight: $fontbodyWgt;
+
+		}
+		.heading-text-edu {
+			color: #30F;
+			font-family: 'Roboto Mono';
+			font-size: 2.1875rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 2rem; /* 91.429% */
+		}
+	}
+	.education-tree {
+		grid-area: 4 / 1 / 6 / 3;
+	}
+	.div3 { 
+		grid-area: 2 / 3 / 4 / 5;
+	}
+	.div4 { 
+		grid-area: 4 / 3 / 6 / 5; 
+	} 
+}
