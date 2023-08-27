@@ -300,10 +300,11 @@ body {
 	display: flex;
 	flex-direction: column;
 	.heading-subheading-text-wrapper { 
-		
-		.heading-subheading-text-wrapper {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		.subheading-text-wrapper {
 			font-weight: $fontbodyWgt;
-
 		}
 		.heading-text-edu {
 			color: #30F;
@@ -311,9 +312,26 @@ body {
 			font-size: 2.1875rem;
 			font-style: normal;
 			font-weight: 700;
-			line-height: 2rem; /* 91.429% */
+			line-height: 2rem; 
+			margin: 0;
 		}
 	}
+	.education-wrapper {
+		display: flex;
+		flex: 1;
+		margin: 0;
+		padding: 1rem;
+		border: solid red($color: #ff0000);
+
+		.education-timeline {
+			flex: 1;
+		}
+		.education-summary-progression {
+			flex: 1;
+		}
+	}
+
+	/*
 	.education-container {
 		display: flex;
 		width: $sectionWidth;
@@ -344,11 +362,11 @@ body {
 			
 						display: flex;
 						flex-direction: column;
-						/*
+						
 						box-sizing: border-box;
 						margin: 0;
 						padding: 0;
-						*/
+						
 						justify-content: center;
 						.vertical-line {
 							width: 0.0625rem;
@@ -389,6 +407,6 @@ body {
 			} 
 		}
 	}
-	
+	*/
 	
 }
