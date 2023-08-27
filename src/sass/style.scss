@@ -270,12 +270,22 @@ body {
 							.project-info {
 								display: inline-flex;
 								
-								align-items: flex-start;
+								align-items: center;
+
 								gap: 0.625rem;
 
 								padding-left: 1rem;
 								padding-right: 1rem;
 								p {
+									border-radius: 0.25rem;
+									border: 1px solid var(--light-2, #b8b8b8);
+									padding: 0.25rem 0.5rem;
+									color: #5e5e5e;
+								}
+								a {
+									width: 1.5rem;
+									height: 1.5rem;
+									flex-shrink: 0;
 									border-radius: 0.25rem;
 									border: 1px solid var(--light-2, #b8b8b8);
 									padding: 0.25rem 0.5rem;
