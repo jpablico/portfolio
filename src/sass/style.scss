@@ -224,7 +224,7 @@ body {
 	}
 
 	.splide {
-		height: 60vh;
+		height: 40vh;
 		.splide-wrapper {
 			display: flex;
 			flex-direction: column;
@@ -306,15 +306,16 @@ body {
 }
 
 #education-section {
-	//width: $sectionWidth;
 	padding: 4rem;
 	box-sizing: border-box;
 	height: 70vh;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	.heading-subheading-text-wrapper { 
 		display: flex;
 		flex-direction: column;
+		width: $sectionWidth;
 		margin: 0;
 		.subheading-text-wrapper {
 			font-weight: $fontbodyWgt;
@@ -333,14 +334,61 @@ body {
 		display: flex;
 		flex: 1;
 		margin: 0;
-		padding: 1rem;
-		border: solid red($color: #ff0000);
+		padding: 2rem;
+		border: solid 1px red($color: #ff0000);
+		width: $sectionWidth;
 
 		.education-timeline {
+			padding-left: 2rem;
+			width: 25.0625rem;
+			height: 30rem;
+			flex-shrink: 0;
 			flex: 1;
+
+		.education-card {
+			display: flex;
+			flex-direction: row;
+			align-items: start;
+			gap: 1rem;
+			.svg-container {
+				padding-top: 4px;
+				display: flex;
+				flex-direction: column;
+			}
+			.education-content {
+				align-items: start;
+
+				.collin-edu, .washington-edu, .cisco-edu {
+					color: #232E35;
+					font-style: normal;
+					font-weight: 600;
+					line-height: normal;
+					margin: 0;
+				}
+				.edu-sub {
+					padding-top: 1rem;
+					padding-bottom: 1rem;
+					padding-left: 20px;
+
+					.education-info {
+						margin: 0;
+						color: #656D72;
+					}
+				}
+			}
+		}
 		}
 		.education-summary-progression {
 			flex: 1;
+
+			.education-summary {
+				width: 34em;
+				color: #656D72;
+				font-size: 1rem;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 2rem; 
+			}
 		}
 	}
 

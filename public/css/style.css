@@ -198,7 +198,7 @@ body {
   padding: 1rem;
 }
 #portfolio-section .splide {
-  height: 60vh;
+  height: 40vh;
 }
 #portfolio-section .splide .splide-wrapper {
   display: flex;
@@ -271,6 +271,7 @@ body {
   height: 70vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   /*
   .education-container {
   	display: flex;
@@ -352,6 +353,7 @@ body {
 #education-section .heading-subheading-text-wrapper {
   display: flex;
   flex-direction: column;
+  width: min(100% - 2rem, 90rem);
   margin: 0;
 }
 #education-section .heading-subheading-text-wrapper .subheading-text-wrapper {
@@ -370,12 +372,55 @@ body {
   display: flex;
   flex: 1;
   margin: 0;
-  padding: 1rem;
-  border: solid 255;
+  padding: 2rem;
+  border: solid 1px 255;
+  width: min(100% - 2rem, 90rem);
 }
 #education-section .education-wrapper .education-timeline {
+  padding-left: 2rem;
+  width: 25.0625rem;
+  height: 30rem;
+  flex-shrink: 0;
   flex: 1;
+}
+#education-section .education-wrapper .education-timeline .education-card {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 1rem;
+}
+#education-section .education-wrapper .education-timeline .education-card .svg-container {
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+}
+#education-section .education-wrapper .education-timeline .education-card .education-content {
+  align-items: start;
+}
+#education-section .education-wrapper .education-timeline .education-card .education-content .collin-edu, #education-section .education-wrapper .education-timeline .education-card .education-content .washington-edu, #education-section .education-wrapper .education-timeline .education-card .education-content .cisco-edu {
+  color: #232E35;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+#education-section .education-wrapper .education-timeline .education-card .education-content .edu-sub {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 20px;
+}
+#education-section .education-wrapper .education-timeline .education-card .education-content .edu-sub .education-info {
+  margin: 0;
+  color: #656D72;
 }
 #education-section .education-wrapper .education-summary-progression {
   flex: 1;
+}
+#education-section .education-wrapper .education-summary-progression .education-summary {
+  width: 34em;
+  color: #656D72;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
 }
