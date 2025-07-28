@@ -41,9 +41,13 @@ export default function Header({ activeSection }) {
     <nav className="fixed top-0 w-full bg-white dark:bg-gray-900 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <span className="text-2xl font-bold text-gray-900 dark:text-white">
+          <Link
+            to="/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          >
             Josh Pablico
-          </span>
+          </Link>
 
           {/* Desktop */}
           <div className="hidden md:flex items-center space-x-8">

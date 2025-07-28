@@ -22,9 +22,16 @@ export default function ProjectCard({ project }) {
           <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
             <Github size={20} /> Code
           </a>
-          <a href={project.live} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
-            <ExternalLink size={20} /> Live Demo
-          </a>
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+            >
+              <ExternalLink size={20} /> Live Demo
+            </a>
+          )}
         </div>
       </div>
     </div>

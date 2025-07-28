@@ -8,9 +8,9 @@ export default function ContactPage() {
     <section id="contact" className="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Get In Touch</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Let's Build Something</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Let's discuss new opportunities.
+            Got a problem that needs automating? Let's talk about turning your team's daily frustrations into streamlined solutions.
           </p>
         </motion.div>
 
@@ -19,28 +19,31 @@ export default function ContactPage() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Let's Connect</h3>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-                I'd love to hear from you. Reach out through any channel.
+                Whether you're looking for a developer who bridges infrastructure and code, want to discuss a challenging project, or just want to chat about automation – I'm always up for a good problem-solving conversation.
               </p>
             </div>
 
             <div className="space-y-6">
-              <ContactLink icon={<Mail size={24} />} title="Email" value="alex.johnson@example.com" href="mailto:alex.johnson@example.com" />
-              <ContactLink icon={<Linkedin size={24} />} title="LinkedIn" value="linkedin.com/in/alexjohnson" href="#" />
-              <ContactLink icon={<Github size={24} />} title="GitHub" value="github.com/alexjohnson" href="#" />
+              <ContactLink icon={<Mail size={24} />} title="Email" value="Best for project discussions and opportunities" href="mailto:jpablico27@gmail.com" />
+              <ContactLink icon={<Linkedin size={24} />} title="LinkedIn" value="Let's connect professionally" href="https://www.linkedin.com/in/josh-pablico-618108220" />
+              <ContactLink icon={<Github size={24} />} title="GitHub" value="Check out my code and contributions" href="https://github.com/jpablico" />
             </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow">
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+              Prefer to reach out directly? Use the form below and I'll get back to you within 24 hours.
+            </p>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <FormField id="name" label="Name" type="text" placeholder="Your name" />
               <FormField id="email" label="Email" type="email" placeholder="your.email@example.com" />
               <FormField id="subject" label="Subject" type="text" placeholder="What's this about?" />
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
-                <textarea id="message" name="message" rows={5} className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white" placeholder="Tell me about your project..." />
+                <textarea id="message" name="message" rows={5} className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white" placeholder="What problem are you trying to solve? I'd love to hear about the challenge you're facing." />
               </div>
               <button type="submit" disabled={state.submitting} className="w-full bg-blue-600 dark:bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-700 transition-colors duration-200 disabled:opacity-60">
-                Send Message
+                Start the Conversation
               </button>
               {state.succeeded && (
                 <p className="text-green-600 dark:text-green-400 text-sm mt-2">Thanks! Your message has been sent.</p>

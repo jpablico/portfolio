@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Code, Download, MapPin, Calendar, Award, Laptop, Database, Mail, Linkedin, Github } from 'lucide-react';
 import { useForm } from '@formspree/react';
 import { Link } from 'react-router-dom';
@@ -11,13 +12,99 @@ import { education } from '../data/education';
 import SkillBar from '../components/ui/SkillBar';
 import portraitJoshP from '../assets/portraitJoshP.jpeg';
 
+import PROJECTS from '../data/projects';
+import ProjectCard from '../components/project/ProjectCard';
+
+
 export default function HomePage() {
+  const titles = [
+    'Data Center Technician',
+    'Full‑Stack Developer',
+    'DevOps Engineer',
+    'Systems Administrator',
+  ];
+
+  const subtitles = [
+    'Maintaining critical infrastructure & automating NOC operations',
+    'Building scalable web applications with modern tech stacks',
+    'Bridging development & operations through intelligent automation',
+    'Managing enterprise infrastructure & ensuring optimal performance',
+  ];
+
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState(titles[0]);
+  const [displaySubtitle, setDisplaySubtitle] = useState(subtitles[0]);
+
+  // Cycle to the next title every 4.5 seconds
+  useEffect(() => {
+    const cycle = setInterval(() => {
+      setTitleIndex((i) => (i + 1) % titles.length);
+    }, 4500);
+    return () => clearInterval(cycle);
+  }, []);
+
+  // Character‑shuffle reveal effect whenever titleIndex changes
+  useEffect(() => {
+    const target = titles[titleIndex];
+    let frame = 0;
+    const fps = 30;
+    const duration = 800; // ms
+    const steps = Math.ceil(duration / (1000 / fps));
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    const scramble = setInterval(() => {
+      const progress = frame / steps;
+      const revealCount = Math.floor(progress * target.length);
+      let text = '';
+      for (let i = 0; i < target.length; i++) {
+        text += i < revealCount ? target[i] : chars[Math.floor(Math.random() * chars.length)];
+      }
+      setDisplayText(text);
+      frame++;
+      if (frame > steps) {
+        clearInterval(scramble);
+        setDisplayText(target);
+        setDisplaySubtitle(subtitles[titleIndex]);
+      }
+    }, 1000 / fps);
+
+    return () => clearInterval(scramble);
+  }, [titleIndex]);
+
+  // When the title has fully settled, start scrambling the subtitle
+  useEffect(() => {
+    if (displayText !== titles[titleIndex]) return; // wait until title is fully revealed
+    const target = subtitles[titleIndex];
+    let frame = 0;
+    const fps = 30;
+    const duration = 800;
+    const steps = Math.ceil(duration / (1000 / fps));
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    const scramble = setInterval(() => {
+      const progress = frame / steps;
+      const revealCount = Math.floor(progress * target.length);
+      let text = '';
+      for (let i = 0; i < target.length; i++) {
+        text += i < revealCount ? target[i] : chars[Math.floor(Math.random() * chars.length)];
+      }
+      setDisplaySubtitle(text);
+      frame++;
+      if (frame > steps) {
+        clearInterval(scramble);
+        setDisplaySubtitle(target);
+      }
+    }, 1000 / fps);
+
+    return () => clearInterval(scramble);
+  }, [displayText, titleIndex]);
+
   return (
     <>
       {/* Hero */}
       <section
         id="home"
-        className="-mt-px pt-10 pb-12 md:pt-2 md:pb-16 bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 min-h-screen flex items-center"
+        className="-mt-px pt-10 pb-12 md:pt-2 md:pb-16 bg-hero-gradient animate-hero-gradient min-h-screen flex items-center"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -25,12 +112,11 @@ export default function HomePage() {
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
                 Hi, I'm <span className="text-blue-600 dark:text-blue-400">Josh Pablico</span>
               </h1>
-              <h2 className="text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-6">
-                Data Center Technician &{' '}
-                <span className="whitespace-nowrap">Full‑stack Developer</span>
+              <h2 className="text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-6 min-h-[2.5rem]">
+                {displayText}
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl">
-                I develop production-grade tools that solve real operational problems and improve infrastructure efficiency.
+              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl min-h-[4rem]">
+                {displaySubtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -59,7 +145,7 @@ export default function HomePage() {
 
             <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }} className="lg:w-1/2 flex justify-center">
               <div className="relative">
-                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 p-1">
+                <div className="w-96 h-96 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 p-1">
                   <img src={portraitJoshP} alt="Josh Pablico" className="w-full h-full rounded-full object-cover" />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 rounded-full p-4 shadow-lg">
@@ -83,7 +169,10 @@ export default function HomePage() {
 
       {/* Skills */}
       <SkillsSection skills={skills} />
-      
+
+      {/* Projects */}
+      <ProjectsSection />
+
       {/* Contact */}
       <ContactSection />
     </>
@@ -266,8 +355,11 @@ function ContactSection() {
     <section id="contact" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Get In Touch</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Let's discuss new opportunities.</p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Ready to Collaborate?</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Tell me about the process that's slowing your team down.</p>
+          <p className="text-md text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-2">
+            I enjoy collaborating with teams to identify pain points and build tools that actually get used. Drop me a line about what you're working on.
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -284,10 +376,10 @@ function ContactSection() {
               <FormField id="subject" label="Subject" type="text" placeholder="What's this about?" />
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
-                <textarea id="message" name="message" rows={5} className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white" placeholder="Tell me about your project..." />
+                <textarea id="message" name="message" rows={5} className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white" placeholder="Describe the challenge you're facing..." />
               </div>
               <button type="submit" disabled={state.submitting} className="w-full bg-blue-600 dark:bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-700 transition-colors duration-200 disabled:opacity-60">
-                Send Message
+                Let's Connect
               </button>
               {state.succeeded && (
                 <p className="text-green-600 dark:text-green-400 text-sm mt-2">Thanks! Your message has been sent.</p>
@@ -347,5 +439,24 @@ function FormField({ id, label, type, placeholder }) {
         placeholder={placeholder}
       />
     </div>
+  );
+}
+
+function ProjectsSection() {
+  return (
+    <section id="projects" className="py-16 bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Projects</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">A selection of what I've built.</p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {PROJECTS.slice(0, 3).map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

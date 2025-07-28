@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { PROJECTS } from '../data/projects';
+import PROJECTS from '../data/projects';
 
 export default function ProjectsPage() {
   return (
@@ -40,9 +40,11 @@ export default function ProjectsPage() {
                   <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                     <Github size={20}/> Code
                   </a>
-                  <a href={project.live} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
-                    <ExternalLink size={20}/> Live
-                  </a>
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                      <ExternalLink size={20}/> Live
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

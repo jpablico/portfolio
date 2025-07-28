@@ -1,1 +1,47 @@
 @import 'tailwindcss';
+
+/* Enhanced Hero Gradient Animation */
+@keyframes hero-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* More dynamic gradient with better color flow */
+/* Updated hero gradient for light mode */
+.bg-hero-gradient {
+  background: linear-gradient(120deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  position: relative;
+}
+
+/* Dark mode version with tech-inspired colors */
+/* Updated hero gradient for dark mode */
+.dark .bg-hero-gradient {
+  background: linear-gradient(120deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+}
+
+.animate-hero-gradient {
+  animation: hero-gradient 40s linear infinite;
+}
+
+/* Add subtle overlay for better text readability */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.dark .hero-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
