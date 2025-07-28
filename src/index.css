@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+.logo {
+  fill: #3b82f6 !important;
+}
+
 /* Enhanced Hero Gradient Animation */
 @keyframes hero-gradient {
   0%   { background-position: 0% 50%; }

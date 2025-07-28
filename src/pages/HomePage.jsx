@@ -71,20 +71,52 @@ export default function HomePage() {
     return () => clearInterval(scramble);
   }, [titleIndex]);
 
-  // When the title has fully settled, start scrambling the subtitle
+  // When the title has fully settled, start scrambling the subtitle (with mobile logic)
   useEffect(() => {
     if (displayText !== titles[titleIndex]) return; // wait until title is fully revealed
+    const isMobile = window.innerWidth < 768;
     const target = subtitles[titleIndex];
+
+    if (isMobile) {
+      let opacity = 0;
+      let yOffset = 10;
+      setDisplaySubtitle('');
+      const fadeStep = 1 / 10;
+      const slideStep = yOffset / 10;
+      let frame = 0;
+
+      const interval = setInterval(() => {
+        opacity += fadeStep;
+        yOffset -= slideStep;
+        frame++;
+        const el = document.getElementById('subtitle-mobile');
+        if (el) {
+          el.style.opacity = opacity;
+          el.style.transform = `translateY(${yOffset}px)`;
+        }
+        if (frame >= 10) {
+          clearInterval(interval);
+          setDisplaySubtitle(target);
+          if (el) {
+            el.style.opacity = 1;
+            el.style.transform = 'translateY(0)';
+          }
+        }
+      }, 30);
+
+      return () => clearInterval(interval);
+    }
+
     let frame = 0;
     const fps = 30;
     const duration = 800;
     const steps = Math.ceil(duration / (1000 / fps));
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
+    let text = '';
     const scramble = setInterval(() => {
       const progress = frame / steps;
       const revealCount = Math.floor(progress * target.length);
-      let text = '';
+      text = '';
       for (let i = 0; i < target.length; i++) {
         text += i < revealCount ? target[i] : chars[Math.floor(Math.random() * chars.length)];
       }
@@ -112,12 +144,19 @@ export default function HomePage() {
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
                 Hi, I'm <span className="text-blue-600 dark:text-blue-400">Josh Pablico</span>
               </h1>
-              <h2 className="text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-6 min-h-[2.5rem]">
-                {displayText}
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl min-h-[4rem]">
-                {displaySubtitle}
-              </p>
+              <div className="min-h-[5rem]">
+                <h2 className="text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-2">
+                  {displayText}
+                </h2>
+                <div className="min-h-[3.5rem]">
+                  <p
+                    id="subtitle-mobile"
+                    className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl transition-opacity duration-300 ease-in-out"
+                  >
+                    {displaySubtitle}
+                  </p>
+                </div>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/projects"
@@ -145,7 +184,7 @@ export default function HomePage() {
 
             <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }} className="lg:w-1/2 flex justify-center">
               <div className="relative">
-                <div className="w-96 h-96 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 p-1">
+                <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 p-1">
                   <img src={portraitJoshP} alt="Josh Pablico" className="w-full h-full rounded-full object-cover" />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 rounded-full p-4 shadow-lg">

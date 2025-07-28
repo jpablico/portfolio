@@ -44,9 +44,14 @@ export default function Header({ activeSection }) {
           <Link
             to="/"
             onClick={() => window.scrollTo(0, 0)}
-            className="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            className="flex items-center space-x-2 hover:text-white dark:hover:text-white transition-colors duration-200"
           >
-            Josh Pablico
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="h-10 w-auto fill-blue-500 dark:fill-blue-400 transition-colors duration-200">
+              <circle cx="50" cy="50" r="40" />
+            </svg>
+            <span className="hidden md:inline text-xl font-semibold text-blue-600 dark:text-blue-400 transition-colors duration-200">
+              Josh Pablico
+            </span>
           </Link>
 
           {/* Desktop */}
@@ -60,20 +65,14 @@ export default function Header({ activeSection }) {
 
           {/* Mobile */}
           <div className="flex items-center md:hidden">
-            <button
-              onClick={toggleDark}
-              aria-pressed={effectiveDark}
-              className="p-2 mr-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
-              aria-label="Toggle dark mode"
-            >
-              {effectiveDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <button onClick={() => setIsMenuOpen((m) => !m)}>
-              <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span className={`block w-6 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}></span>
-                <span className={`block w-6 h-0.5 bg-gray-900 dark:bg-white mt-1 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
-              </div>
-            </button>
+            <div className="w-10 h-10 flex justify-center items-center">
+              <button onClick={() => setIsMenuOpen((m) => !m)} className="w-full h-full">
+                <div className="w-6 h-6 flex flex-col justify-center items-center">
+                  <span className={`block w-6 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}></span>
+                  <span className={`block w-6 h-0.5 bg-gray-900 dark:bg-white mt-1 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
 
