@@ -106,7 +106,7 @@ const PROJECTS = [
         ]
       }
     },
-    technologies: ['React', 'Vite', 'Tailwind CSS', 'Google Sheets API', 'Google Drive API', 'OAuth2'],
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Google Sheets API', 'Google Drive API', 'OAuth2', 'K3s', 'Node.js'],
     image: PowerAuditImage,
     github: 'https://github.com/jpablico/GIP-Power-Audit',
     live: 'https://jpablico.github.io/GIP-Power-Audit/'
