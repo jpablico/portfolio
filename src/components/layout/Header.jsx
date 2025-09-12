@@ -1,16 +1,16 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Sun, Moon } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import useTheme from '../../hooks/useTheme';
+//import useTheme from '../../hooks/useTheme';
 
 export default function Header({ activeSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   // Fallback to hook if parent didn't pass darkMode/setDarkMode
-  const { theme, toggle } = useTheme();
-  const effectiveDark = theme === 'dark';
-  const toggleDark = toggle;
+  //const { theme, toggle } = useTheme();
+  //const effectiveDark = theme === 'dark';
+  //const toggleDark = toggle;
 
   // Close menu on route change
   useEffect(() => setIsMenuOpen(false), [location.pathname]);
