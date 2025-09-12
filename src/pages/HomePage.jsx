@@ -490,7 +490,7 @@ function ProjectsSection() {
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">A selection of what I've built.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PROJECTS.slice(0, 3).map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
