@@ -111,9 +111,119 @@ const PROJECTS = [
     github: 'https://github.com/jpablico/GIP-Power-Audit',
     live: 'https://jpablico.github.io/GIP-Power-Audit/'
   },
+{
+    slug: 'nocllama-llm-assistant',
+    title: 'NOCLLAMA – Internal Documentation Assistant',
+    description: 'AI assistant for NOC technicians that achieved 100% team adoption before being rebuilt with improved architecture. Currently in R&D phase using stronger models to eliminate hallucination issues.',
+    details: {
+      hero: {
+        title: 'Enterprise AI Documentation Assistant',
+        subtitle: 'Deployed solution with 100% team adoption, now rebuilding with enhanced architecture for improved reliability'
+      },
+      challenge: {
+        title: 'The Challenge',
+        description: 'NOC technicians were spending 5-10 minutes searching through fragmented documentation during critical incidents, reducing operational efficiency and increasing response times.',
+        painPoints: [
+          {
+            title: 'Knowledge Fragmentation',
+            description: 'Critical information scattered across SOPs, ISMS policies, and ticket archives'
+          },
+          {
+            title: 'Search Inefficiency',
+            description: '5-10 minutes spent finding relevant documentation during incidents'
+          },
+          {
+            title: 'Training Bottlenecks',
+            description: 'New technicians struggling to locate procedures and policies'
+          },
+          {
+            title: 'Hardware Constraints',
+            description: 'Enterprise servers requiring efficient models that maintain accuracy'
+          }
+        ]
+      },
+      solution: {
+        title: 'Solution Evolution',
+        description: 'Developed and deployed a RAG-based AI assistant that achieved full team adoption, then rebuilt with improved architecture after identifying performance limitations.',
+        process: [
+          {
+            step: 1,
+            title: 'Initial Deployment',
+            description: 'Successfully deployed with Mistral/Mixtral models achieving 100% team adoption'
+          },
+          {
+            step: 2,
+            title: 'Performance Optimization',
+            description: 'Adapted to TinyLlama for Dell R440 hardware compatibility (704GB RAM)'
+          },
+          {
+            step: 3,
+            title: 'Quality Assessment',
+            description: 'Identified hallucination issues with smaller model, made decision to rebuild'
+          },
+          {
+            step: 4,
+            title: 'Architecture Redesign',
+            description: 'Rebuilding with OpenAI OSS 20B models and enhanced prompting on RTX 5080'
+          }
+        ]
+      },
+      implementation: {
+        title: 'Technical Implementation',
+        areas: [
+          {
+            title: 'Original Architecture',
+            description: 'RAG pipeline using Ollama with Mistral/Mixtral models, achieving <30s response times and full team adoption.',
+            technologies: ['Ollama', 'Mistral 7B', 'Mixtral 8x7B', 'LlamaIndex', 'Dell R440']
+          },
+          {
+            title: 'Current Rebuild',
+            description: 'Enhanced architecture using LM Studio with OpenAI OSS 20B models and stricter prompting to eliminate hallucinations.',
+            technologies: ['LM Studio', 'OpenAI OSS 20B', 'Enhanced Prompting', 'RTX 5080']
+          },
+          {
+            title: 'Core Infrastructure',
+            description: 'FastAPI backend with React frontend, document processing pipeline, and streaming responses.',
+            technologies: ['FastAPI', 'Python', 'React', 'Tailwind CSS', 'RAG Architecture']
+          }
+        ]
+      },
+      impact: {
+        title: 'Impact & Lessons Learned',
+        metrics: [
+          {
+            number: '100%',
+            label: 'Initial Adoption',
+            description: 'Full team adoption of original deployment'
+          },
+          {
+            number: '<30s',
+            label: 'Response Time',
+            description: 'Achieved target knowledge access speed'
+          },
+          {
+            number: '100%',
+            label: 'Quality Focus',
+            description: 'Prioritized accuracy over convenience when issues emerged'
+          },
+          {
+            number: 'R&D',
+            label: 'Current Phase',
+            description: 'Rebuilding with improved architecture and stronger models'
+          }
+        ]
+      }
+    },
+    technologies: ['Python', 'FastAPI', 'LM Studio', 'Ollama', 'LlamaIndex', 'React', 'Tailwind CSS'],
+    image: NOCLAMMAImage,
+    github: 'https://github.com/jpablico/NOCLLAMA',
+    live: 'https://webui.jpablico.com'
+  },
+
+  /*
   {
     slug: 'nocllama-llm-assistant',
-    title: 'NOCLLAMA – Internal LLM Assistant',
+    title: 'NOCLLAMA – Internal  Assistant',
     description: 'Self-hosted AI assistant for NOC technicians. Uses local LLMs and RAG architecture to enable natural language querying of SOPs, ISMS policies, and ticket archives.',
     details: {
       hero: {
@@ -218,6 +328,7 @@ const PROJECTS = [
     image: NOCLAMMAImage,
     github: 'https://github.com/jpablico/NOCLLAMA'
   },
+  */
   {
     slug: 'ubersmith-alert-helper',
     title: 'Ubersmith Alert Helper Extension',
