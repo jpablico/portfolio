@@ -219,7 +219,6 @@ const PROJECTS = [
     github: 'https://github.com/jpablico/NOCLLAMA',
     live: 'https://webui.jpablico.com'
   },
-
   /*
   {
     slug: 'nocllama-llm-assistant',
