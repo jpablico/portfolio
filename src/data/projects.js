@@ -1,6 +1,9 @@
 import PowerAuditImage from '../assets/Covers/PowerAuditTool.png';
 import UbersmithImage from '../assets/Covers/Ubersmith.png';
 import NOCLAMMAImage from '../assets/Covers/NOCLLAMA.png';
+import GrafanaImage from '../assets/Covers/Grafana.png';
+import WikiImage from '../assets/Covers/Wiki.png';
+import { image } from 'framer-motion/client';
 
 const PROJECTS = [
   {
@@ -434,6 +437,227 @@ const PROJECTS = [
     technologies: ['JavaScript', 'Chrome Extensions API', 'Regex', 'DOM Manipulation'],
     image: UbersmithImage,
     github: 'https://github.com/jpablico/Ubersmith-Alert-Helper-Extension'
+  },
+  {
+    slug: 'infrastructure-monitoring-stack',
+    title: 'Prometheus & Grafana Implementation',
+    description: 'Self-hosted Prometheus and Grafana deployment providing comprehensive monitoring, alerting, and observability for personal infrastructure and homelab environment.',
+    details: {
+      hero: {
+        title: 'Enterprise-Grade Infrastructure Monitoring',
+        subtitle: 'Prometheus and Grafana stack delivering comprehensive observability, alerting, and performance analytics for personal infrastructure'
+      },
+      challenge: {
+        title: 'Infrastructure Visibility Challenge',
+        description: 'Managing multiple servers, containers, and services without comprehensive monitoring, alerting, or performance visibility across the personal infrastructure stack.',
+        painPoints: [
+          {
+            title: 'Blind Spots',
+            description: 'Limited visibility into system performance, resource utilization, and service health'
+          },
+          {
+            title: 'Reactive Troubleshooting',
+            description: 'Discovering issues only after services fail or performance degrades'
+          },
+          {
+            title: 'Resource Management',
+            description: 'Difficulty tracking resource consumption and capacity planning'
+          },
+          {
+            title: 'Alert Fatigue',
+            description: 'Need for intelligent alerting that reduces noise while catching critical issues'
+          }
+        ]
+      },
+      solution: {
+        title: 'Monitoring Architecture',
+        description: 'Deployed comprehensive monitoring stack using Prometheus for metrics collection and Grafana for visualization, providing enterprise-grade observability for personal infrastructure.',
+        process: [
+          {
+            step: 1,
+            title: 'Metrics Collection',
+            description: 'Prometheus deployment with node exporters and service discovery across infrastructure'
+          },
+          {
+            step: 2,
+            title: 'Data Visualization',
+            description: 'Grafana dashboards for system performance, resource utilization, and service health'
+          },
+          {
+            step: 3,
+            title: 'Alerting System',
+            description: 'Intelligent alert rules with notification channels for proactive issue detection'
+          },
+          {
+            step: 4,
+            title: 'Performance Analysis',
+            description: 'Historical data analysis and capacity planning based on collected metrics'
+          }
+        ]
+      },
+      implementation: {
+        title: 'Technical Implementation',
+        areas: [
+          {
+            title: 'Metrics Collection',
+            description: 'Prometheus server with node exporters, container monitoring, and service discovery providing comprehensive infrastructure metrics.',
+            technologies: ['Prometheus', 'Node Exporter', 'Container Monitoring', 'Service Discovery']
+          },
+          {
+            title: 'Data Visualization',
+            description: 'Grafana deployment with custom dashboards, templating, and real-time monitoring across system performance and resource utilization.',
+            technologies: ['Grafana', 'Custom Dashboards', 'Data Source Integration', 'Real-time Visualization']
+          },
+          {
+            title: 'Alerting & Automation',
+            description: 'Alert manager configuration with intelligent routing, notification channels, and automated response workflows.',
+            technologies: ['AlertManager', 'Notification Routing', 'Webhook Integration', 'Alert Correlation']
+          },
+          {
+            title: 'Storage & Retention',
+            description: 'Long-term metrics storage with data retention policies and performance optimization for historical analysis.',
+            technologies: ['Time Series Database', 'Data Retention', 'Storage Optimization', 'Historical Analysis']
+          }
+        ]
+      },
+      impact: {
+        title: 'Monitoring Results',
+        metrics: [
+          {
+            number: '100%',
+            label: 'Infrastructure Coverage',
+            description: 'Complete visibility across all servers, containers, and services'
+          },
+          {
+            number: 'Real-time',
+            label: 'Monitoring',
+            description: 'Live performance metrics and health status tracking'
+          },
+          {
+            number: 'Proactive',
+            label: 'Alerting',
+            description: 'Early issue detection preventing service disruptions'
+          },
+          {
+            number: 'Historical',
+            label: 'Analysis',
+            description: 'Long-term data retention enabling capacity planning'
+          }
+        ]
+      }
+    },
+    technologies: ['Prometheus', 'Grafana', 'AlertManager', 'Node Exporter', 'Docker', 'Time Series DB'],
+    image: GrafanaImage,
+    github: 'https://github.com/prometheus/prometheus',
+    live: null
+  },
+  {
+    slug: 'personal-knowledge-management',
+    title: 'Self-Hosted Wiki Platform',
+    description: 'Self-hosted Wiki.js platform for organizing technical documentation, study materials, and project knowledge with modern collaborative features.',
+    details: {
+      hero: {
+        title: 'Centralized Knowledge Management System',
+        subtitle: 'Modern wiki platform supporting technical documentation, CCNA studies, and project documentation with advanced search and organization'
+      },
+      challenge: {
+        title: 'Information Organization Challenge',
+        description: 'Managing growing collection of technical notes, CCNA study materials, project documentation, and infrastructure knowledge across multiple formats and sources.',
+        painPoints: [
+          {
+            title: 'Scattered Information',
+            description: 'Technical notes and documentation spread across multiple files and formats'
+          },
+          {
+            title: 'Knowledge Retention',
+            description: 'Difficulty tracking learning progress and connecting related concepts'
+          },
+          {
+            title: 'Searchability',
+            description: 'Time wasted searching through disorganized documentation'
+          },
+          {
+            title: 'Collaborative Access',
+            description: 'Need for structured, accessible knowledge sharing platform'
+          }
+        ]
+      },
+      solution: {
+        title: 'Wiki.js Implementation',
+        description: 'Deployed comprehensive knowledge management platform with modern collaborative features, advanced search capabilities, and structured content organization.',
+        process: [
+          {
+            step: 1,
+            title: 'Platform Setup',
+            description: 'Self-hosted Wiki.js deployment with database integration and user management'
+          },
+          {
+            step: 2,
+            title: 'Information Architecture',
+            description: 'Organized content structure for technical documentation, studies, and projects'
+          },
+          {
+            step: 3,
+            title: 'Content Migration',
+            description: 'Systematic migration and organization of existing documentation and notes'
+          },
+          {
+            step: 4,
+            title: 'Integration & Automation',
+            description: 'Connected with existing infrastructure and automated backup processes'
+          }
+        ]
+      },
+      implementation: {
+        title: 'Technical Implementation',
+        areas: [
+          {
+            title: 'Platform Architecture',
+            description: 'Self-hosted Wiki.js with PostgreSQL database, integrated authentication, and modern collaborative editing features.',
+            technologies: ['Wiki.js', 'Node.js', 'PostgreSQL', 'Docker']
+          },
+          {
+            title: 'Content Organization',
+            description: 'Structured information hierarchy supporting technical documentation, study materials, and project knowledge with advanced tagging and categorization.',
+            technologies: ['Markdown', 'Git Integration', 'Advanced Search', 'Content Categorization']
+          },
+          {
+            title: 'Integration & Security',
+            description: 'Integrated with existing infrastructure, automated backups, and secure access controls for knowledge management.',
+            technologies: ['HTTPS/SSL', 'Automated Backup', 'Access Control', 'Infrastructure Integration']
+          }
+        ]
+      },
+      impact: {
+        title: 'Knowledge Management Results',
+        metrics: [
+          {
+            number: 'Centralized',
+            label: 'Documentation',
+            description: 'All technical notes and documentation in searchable format'
+          },
+          {
+            number: 'Advanced',
+            label: 'Search',
+            description: 'Full-text search across all documentation and notes'
+          },
+          {
+            number: 'Structured',
+            label: 'Learning',
+            description: 'Organized CCNA study materials and progress tracking'
+          },
+          {
+            number: 'Collaborative',
+            label: 'Platform',
+            description: 'Modern wiki features supporting knowledge sharing'
+          }
+        ]
+      }
+    },
+    technologies: ['Wiki.js', 'Node.js', 'PostgreSQL', 'Docker', 'Markdown', 'Git Integration'],
+    image: WikiImage, 
+    live: 'https://wiki.jpablico.com',
+    github: 'https://github.com/Requarks/wiki'
   }
 ];
 export default PROJECTS;
